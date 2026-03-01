@@ -1,1 +1,185 @@
+<!DOCTYPE html>
 
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pedido de casamento para vitoria 💖</title>
+
+    <style>
+
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: 'Arial', sans-serif;
+
+            background: linear-gradient(to bottom, #FFB6C1, #FF69B4);
+
+            overflow: hidden;
+
+            text-align: center;
+
+            color: #fff;
+
+        }
+
+        h1 {
+
+            margin-top: 50px;
+
+            font-size: 50px;
+
+            text-shadow: 2px 2px 5px #ff1493;
+
+        }
+
+        p {
+
+            font-size: 28px;
+
+            margin-bottom: 40px;
+
+            text-shadow: 1px 1px 3px #ff1493;
+
+        }
+
+        button {
+
+            padding: 15px 35px;
+
+            font-size: 24px;
+
+            border: none;
+
+            border-radius: 15px;
+
+            background-color: #fff;
+
+            color: #FF1493;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            margin: 15px;
+
+            position: relative;
+
+        }
+
+        button:hover {
+
+            background-color: #FF1493;
+
+            color: #fff;
+
+        }
+
+        /* Estilo dos corações */
+
+        .heart {
+
+            position: absolute;
+
+            font-size: 24px;
+
+            animation: fall linear infinite;
+
+        }
+
+        @keyframes fall {
+
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+
+            100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>💖 Pedido Especial 💖</h1>
+
+    <p>Quer casar comigo vitoria? 🥺</p>
+
+    <button id="simBtn">Sim 😍</button>
+
+    <button id="naoBtn">Não 😢</button>
+
+    <script>
+
+        const naoBtn = document.getElementById("naoBtn");
+
+        const simBtn = document.getElementById("simBtn");
+
+        // Faz o botão "Não" fugir do mouse
+
+        naoBtn.addEventListener("mouseover", () => {
+
+            naoBtn.style.position = "absolute";
+
+            naoBtn.style.top = Math.random() * (window.innerHeight - 100) + "px";
+
+            naoBtn.style.left = Math.random() * (window.innerWidth - 150) + "px";
+
+            naoBtn.textContent = "Sim 😍";
+
+        });
+
+        // Mensagem ao clicar em "Sim"
+
+        simBtn.addEventListener("click", () => {
+
+            alert("ebaaaa eu te amo mamãe 💕");
+
+        });
+
+        naoBtn.addEventListener("click", () => {
+
+            alert("não vai fugir de mim ein vitoria, eu te amo neném 💖");
+
+        });
+
+        // Função para criar corações caindo
+
+        function criarCoracao() {
+
+            const coracao = document.createElement("div");
+
+            coracao.classList.add("heart");
+
+            coracao.style.left = Math.random() * window.innerWidth + "px";
+
+            coracao.style.fontSize = (10 + Math.random() * 30) + "px";
+
+            coracao.textContent = "💖";
+
+            document.body.appendChild(coracao);
+
+            setTimeout(() => {
+
+                coracao.remove();
+
+            }, 8000);
+
+        }
+
+        // Criar corações a cada 300ms
+
+        setInterval(criarCoracao, 300);
+
+    </script>
+
+</body>
+
+</html>
